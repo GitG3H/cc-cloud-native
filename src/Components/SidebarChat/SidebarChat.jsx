@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./SidebarChat.css";
 import Avatar from "@mui/material/Avatar";
 
-function SidebarChat({ addNewChart }) {
+function SidebarChat({ addNewChat }) {
   const [seed, setSeed] = useState("");
   const [avatarList, setAvatarList] = useState([
     "Peanut",
@@ -31,7 +31,7 @@ function SidebarChat({ addNewChart }) {
     setSeed(Math.floor(Math.random() * avatarList.length));
   }, [avatarList]);
 
-  return !addNewChart ? (
+  return !addNewChat ? (
     <div className="sidebarChat">
       <Avatar
         src={`https://api.dicebear.com/6.x/adventurer/svg?seed=${seed}`}
@@ -43,7 +43,7 @@ function SidebarChat({ addNewChart }) {
     </div>
   ) : (
     <div onClick={createChart} className="sidebarChat">
-      Hello at 1.20min video
+      <h2>Add New Chat Room</h2>
     </div>
   );
 }
