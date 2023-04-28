@@ -4,7 +4,7 @@ import Avatar from "@mui/material/Avatar";
 
 function SidebarChat({ addNewChat }) {
   const [seed, setSeed] = useState("");
-  const [avatarList, setAvatarList] = useState([
+  const [avatarList] = useState([
     "Peanut",
     "Daisy",
     "Buster",
