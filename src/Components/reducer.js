@@ -13,10 +13,10 @@ const reducer = (state, action) => {
         ...state,
         user: action.user,
       };
-    case actionTypes.REMOVE_USER:
+    /*  case actionTypes.REMOVE_USER:
       return {
         user: null,
-      };
+      }; */
 
     default:
       return state;
