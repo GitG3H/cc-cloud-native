@@ -4,9 +4,11 @@ import Chat from "./Components/Chat/Chat";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Components/Login/Login";
+import { useStateValue } from "./Components/StateProvider";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [{ user }, dispatch] = useStateValue();
+  console.log(user);
 
   return (
     <div className="app">
