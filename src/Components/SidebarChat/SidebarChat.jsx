@@ -3,9 +3,11 @@ import "./SidebarChat.css";
 import Avatar from "@mui/material/Avatar";
 import db from "../firebase";
 import { Link } from "react-router-dom";
+import AddIcon from "@mui/icons-material/Add";
 
 function SidebarChat({ addNewChat, id, name }) {
   const [seed, setSeed] = useState("");
+  const [messages, setMessages] = useState("");
   const [avatarList] = useState([
     "Peanut",
     "Daisy",
@@ -30,6 +32,18 @@ function SidebarChat({ addNewChat, id, name }) {
   };
 
   useEffect(() => {
+    if (id) {
+      db.collection("rooms")
+        .doc(id)
+        .collection("messages")
+        .orderBy("timestamp", "desc")
+        .onSnapshot((snapshot) =>
+          setMessages(snapshot.docs.map((doc) => doc.data()))
+        );
+    }
+  }, [id]);
+
+  useEffect(() => {
     setSeed(Math.floor(Math.random() * avatarList.length));
   }, [avatarList]);
 
@@ -41,13 +55,16 @@ function SidebarChat({ addNewChat, id, name }) {
         />
         <div className="sidebarChat__info">
           <h2>{name}</h2>
-          <p>Last message..</p>
+          <p>{messages[0]?.message}</p>
         </div>
       </div>
     </Link>
   ) : (
     <div onClick={createChart} className="sidebarChat">
-      <h2>Add New Chat Room</h2>
+      <h2>
+        {" "}
+        <AddIcon /> Chat Room
+      </h2>
     </div>
   );
 }
