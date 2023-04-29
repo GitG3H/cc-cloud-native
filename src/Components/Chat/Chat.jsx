@@ -8,10 +8,14 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 //import MicIcon from "@mui/icons-material/Mic";
 import SendIcon from "@mui/icons-material/Send";
+import { useParams } from "react-router-dom";
+import db from "../firebase";
 
 function Chat() {
   const [seed, setSeed] = useState("");
   const [input, setInput] = useState("");
+  const { roomId } = useParams();
+  const [roomName, setRoomName] = useState("");
   const [avatarList] = useState([
     "Peanut",
     "Daisy",
@@ -34,8 +38,16 @@ function Chat() {
   };
 
   useEffect(() => {
+    if (roomId) {
+      db.collection("rooms")
+        .doc(roomId)
+        .onSnapshot((snapshot) => setRoomName(snapshot.data().name));
+    }
+  }, [roomId]);
+
+  useEffect(() => {
     setSeed(Math.floor(Math.random() * avatarList.length));
-  }, [avatarList]);
+  }, [roomId, avatarList]);
 
   return (
     <div className="chat">
@@ -44,7 +56,7 @@ function Chat() {
           src={`https://api.dicebear.com/6.x/adventurer/svg?seed=${seed}`}
         />
         <div className="chat__headerInfo">
-          <h3>Room name</h3>
+          <h3>{roomName}</h3>
           <p>Last seen at ...</p>
         </div>
 
