@@ -31,6 +31,7 @@ function Sidebar() {
     <div className="sidebar">
       <div className="sidebar__header">
         <Avatar src={user?.photoURL} className="sidebar__avatar" />
+        <h3 className="displayName">{user?.displayName}</h3>
         <div className="sidebar__headerRight">
           <IconButton>
             <DonutLargeIcon />
