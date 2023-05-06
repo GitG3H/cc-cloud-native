@@ -1,3 +1,7 @@
-## Cloud Computing Application
+## Innova Cloud Application
 
-### React JS, Firebase
+### Technology Used -
+
+#### React JS - Frontend
+
+#### Firebase Authentication, Firestore database, Firebase hosting.

@@ -28,7 +28,7 @@ function Login() {
         />
         <div className="login__text">
           <h1>
-            <span>🥰</span> Innova Cloud
+            <span>🌨️</span> Innova Cloud
           </h1>
         </div>
         <Button onClick={signIn}>Sign In With Google</Button>
