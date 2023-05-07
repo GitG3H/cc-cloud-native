@@ -13,9 +13,68 @@
 }
 .app__body {
   display: flex;
-  background-color: rgb(252, 252, 231);
+  background-color: rgb(255, 255, 255);
   height: 90vh;
   width: 90vw;
   box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 1.5);
   border-radius: 40px;
+}
+
+.app-fb {
+  background-color: rgb(255, 255, 255);
+  height: 100vh;
+  overflow-y: scroll;
+  border-radius: 3rem;
+}
+.app__body-fb {
+  display: flex;
+}
+.app-fb::-webkit-scrollbar {
+  display: none;
+}
+/* Hide for IE, Edge, Firefox  */
+.app-fb {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.cards {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.cardLeft {
+  background-color: rgb(247, 247, 240);
+  cursor: pointer;
+  flex: 0.5;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid gray;
+  padding: 1rem;
+  margin: 2rem;
+  box-shadow: 3px 1px 13px rgba(80, 80, 77, 1.7);
+  border-radius: 10px;
+}
+
+.cardLeft > img {
+  object-fit: contain;
+  height: 100px;
+  width: 100px;
+}
+.cardRight {
+  background-color: rgb(247, 247, 240);
+  cursor: pointer;
+  flex: 0.5;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid gray;
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 10px;
+  box-shadow: 3px 1px 13px rgba(80, 80, 77, 1.7);
 }

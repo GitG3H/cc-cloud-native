@@ -1,0 +1,14 @@
+.feed {
+  flex: 1;
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.storyReel {
+  position: sticky;
+  top: 0px;
+  z-index: 111;
+}
