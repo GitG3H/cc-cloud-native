@@ -6,6 +6,8 @@
 
 #### Firebase Authentication, Firestore database, Firebase hosting.
 
+Team Members: Gayathri Sarapu, Bharath Kumar Pulindram, Abhinay Reddy Polimera 
+
 Motivation / Purpose:
 This is a cross-platform cloud-native dynamic web application, deployed on Google Firebase and accessible via Play Store. Technologies include React JS, Firebase authentication, Firebase hosting, Firebase storage.
 This application can be used by teams to collaborate and share information. It features the use of a chat engine, which synchronizes messages from multiple users in real time. Users can message using text, emojis, GIFs, etc. It acts as a shared workspace where discussions and digital content can be shared. The application also sends broadcast notifications to users, when the content needs to be shared across large groups of participants. The real time database is used as a web socket to transfer real time data effectively among users.
@@ -14,6 +16,8 @@ Technologies Used:
 Cloud Technologies: Google Firebase
 Firebase is used as a cloud service for real time cloud database, hosting, google authentication and Google analytics for data visualization.
 Technologies: React JS is used for frontend development in which the entire UI application part is developed. The NextJS framework of React is used for server side rendering and data operations.
+
+Application Link: https://cloud-native-chat.web.app
 
 Step1: Login Page with Google Authentication:
 ![Step1](https://github.com/user-attachments/assets/8a656b9a-1404-496a-97be-5ffe998e16cd)
